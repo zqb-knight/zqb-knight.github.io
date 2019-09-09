@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="PAT 1043     Is It a Binary Search Tree1. 知识点： 二叉查找树的创建，遍历  2. 题目分析： 要对二叉查找树进行创建，然后判断输入序列是否为前序遍历或镜像前序遍历，最后输出后序遍历 题目易错的地方是，当输入序列是镜像前序遍历时，要输出的是镜像后序遍历。  3. 注意：#####3.1 在为二叉树创建节点时要将左右子树初始化为NULL 1234567//创">
+<meta name="description" content="PAT 1043     Is It a Binary Search Tree1. 知识点： 二叉查找树的创建，遍历  2. 题目分析： 要对二叉查找树进行创建，然后判断输入序列是否为前序遍历或镜像前序遍历，最后输出后序遍历 题目易错的地方是，当输入序列是镜像前序遍历时，要输出的是镜像后序遍历。  3. 注意：3.1 在为二叉树创建节点时要将左右子树初始化为NULL1234567//创建新节点no">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/2019/09/09/PAT 1043     Is It a Binary Search Tree/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="PAT 1043     Is It a Binary Search Tree1. 知识点： 二叉查找树的创建，遍历  2. 题目分析： 要对二叉查找树进行创建，然后判断输入序列是否为前序遍历或镜像前序遍历，最后输出后序遍历 题目易错的地方是，当输入序列是镜像前序遍历时，要输出的是镜像后序遍历。  3. 注意：#####3.1 在为二叉树创建节点时要将左右子树初始化为NULL 1234567//创">
+<meta property="og:description" content="PAT 1043     Is It a Binary Search Tree1. 知识点： 二叉查找树的创建，遍历  2. 题目分析： 要对二叉查找树进行创建，然后判断输入序列是否为前序遍历或镜像前序遍历，最后输出后序遍历 题目易错的地方是，当输入序列是镜像前序遍历时，要输出的是镜像后序遍历。  3. 注意：3.1 在为二叉树创建节点时要将左右子树初始化为NULL1234567//创建新节点no">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-09T08:46:35.000Z">
+<meta property="og:updated_time" content="2019-09-09T11:53:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="PAT 1043     Is It a Binary Search Tree1. 知识点： 二叉查找树的创建，遍历  2. 题目分析： 要对二叉查找树进行创建，然后判断输入序列是否为前序遍历或镜像前序遍历，最后输出后序遍历 题目易错的地方是，当输入序列是镜像前序遍历时，要输出的是镜像后序遍历。  3. 注意：#####3.1 在为二叉树创建节点时要将左右子树初始化为NULL 1234567//创">
+<meta name="twitter:description" content="PAT 1043     Is It a Binary Search Tree1. 知识点： 二叉查找树的创建，遍历  2. 题目分析： 要对二叉查找树进行创建，然后判断输入序列是否为前序遍历或镜像前序遍历，最后输出后序遍历 题目易错的地方是，当输入序列是镜像前序遍历时，要输出的是镜像后序遍历。  3. 注意：3.1 在为二叉树创建节点时要将左右子树初始化为NULL1234567//创建新节点no">
 
 
 
@@ -97,7 +97,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Muse',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -346,8 +346,7 @@
 <p>要对二叉查找树进行创建，然后判断输入序列是否为前序遍历或镜像前序遍历，最后输出后序遍历</p>
 <p>题目易错的地方是，当输入序列是镜像前序遍历时，要输出的是镜像后序遍历。</p>
 </blockquote>
-<h4 id="3-注意："><a href="#3-注意：" class="headerlink" title="3. 注意："></a>3. 注意：</h4><p>#####3.1 在为二叉树创建节点时要将左右子树初始化为NULL</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建新节点</span></span><br><span class="line"><span class="function">node* <span class="title">newNode</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    node* new_node = <span class="keyword">new</span> node;</span><br><span class="line">    new_node-&gt;data = n;</span><br><span class="line">    new_node-&gt;lchild = new_node-&gt;rchild = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span> new_node;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-注意："><a href="#3-注意：" class="headerlink" title="3. 注意："></a>3. 注意：</h4><h5 id="3-1-在为二叉树创建节点时要将左右子树初始化为NULL"><a href="#3-1-在为二叉树创建节点时要将左右子树初始化为NULL" class="headerlink" title="3.1 在为二叉树创建节点时要将左右子树初始化为NULL"></a>3.1 在为二叉树创建节点时要将左右子树初始化为NULL</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建新节点</span></span><br><span class="line"><span class="function">node* <span class="title">newNode</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    node* new_node = <span class="keyword">new</span> node;</span><br><span class="line">    new_node-&gt;data = n;</span><br><span class="line">    new_node-&gt;lchild = new_node-&gt;rchild = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span> new_node;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h5 id="3-2-涉及到数组的比较时，可以使用vector，可以直接比较数组是否相等，省去了遍历数组的步骤"><a href="#3-2-涉及到数组的比较时，可以使用vector，可以直接比较数组是否相等，省去了遍历数组的步骤" class="headerlink" title="3.2 涉及到数组的比较时，可以使用vector，可以直接比较数组是否相等，省去了遍历数组的步骤"></a>3.2 涉及到数组的比较时，可以使用vector，可以直接比较数组是否相等，省去了遍历数组的步骤</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//比较</span></span><br><span class="line">    <span class="keyword">if</span>(in == pre)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"YES"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i != post.size(); i++)&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; post[i];</span><br><span class="line">            <span class="keyword">if</span>(i != (post.size() - <span class="number">1</span>))&#123;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
@@ -377,8 +376,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/08/###标题/" rel="next" title>
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/2019/08/29/PAT甲级-1002-A-B-for-Polynomials/" rel="next" title="PAT甲级 1002 A+B for Polynomials">
+                <i class="fa fa-chevron-left"></i> PAT甲级 1002 A+B for Polynomials
               </a>
             
           </div>
@@ -462,7 +461,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -499,7 +498,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#PAT-1043-Is-It-a-Binary-Search-Tree"><span class="nav-number">1.</span> <span class="nav-text">PAT 1043     Is It a Binary Search Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-知识点："><span class="nav-number">1.1.</span> <span class="nav-text">1. 知识点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-题目分析："><span class="nav-number">1.2.</span> <span class="nav-text">2. 题目分析：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-注意："><span class="nav-number">1.3.</span> <span class="nav-text">3. 注意：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-2-涉及到数组的比较时，可以使用vector，可以直接比较数组是否相等，省去了遍历数组的步骤"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.2 涉及到数组的比较时，可以使用vector，可以直接比较数组是否相等，省去了遍历数组的步骤</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-代码"><span class="nav-number">1.4.</span> <span class="nav-text">4. 代码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#PAT-1043-Is-It-a-Binary-Search-Tree"><span class="nav-number">1.</span> <span class="nav-text">PAT 1043     Is It a Binary Search Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-知识点："><span class="nav-number">1.1.</span> <span class="nav-text">1. 知识点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-题目分析："><span class="nav-number">1.2.</span> <span class="nav-text">2. 题目分析：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-注意："><span class="nav-number">1.3.</span> <span class="nav-text">3. 注意：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-1-在为二叉树创建节点时要将左右子树初始化为NULL"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.1 在为二叉树创建节点时要将左右子树初始化为NULL</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-2-涉及到数组的比较时，可以使用vector，可以直接比较数组是否相等，省去了遍历数组的步骤"><span class="nav-number">1.3.2.</span> <span class="nav-text">3.2 涉及到数组的比较时，可以使用vector，可以直接比较数组是否相等，省去了遍历数组的步骤</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-代码"><span class="nav-number">1.4.</span> <span class="nav-text">4. 代码</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -537,7 +536,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
 
 
@@ -636,13 +635,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
